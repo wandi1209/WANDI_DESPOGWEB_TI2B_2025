@@ -1,0 +1,178 @@
+:root {
+    --text-color: #333333;
+    --light-bg: #f8f8f8;
+}
+
+.riwayat-pemesanan {
+    padding: 20px;
+    max-width: 900px;
+    font-family: Arial, sans-serif;
+}
+
+.riwayat-pemesanan h1 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.order-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid var(--primary-color);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative; 
+}
+
+.order-card h2 {
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.order-card p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.order-card strong {
+    color: var(--primary-color);
+}
+
+.order-card h3 {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
+
+.order-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.order-detail-table th, 
+.order-detail-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.order-detail-table th {
+    background-color: var(--light-bg);
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.order-detail-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.delete-order-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white; /* Diubah agar kontras dengan latar merah */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+}
+
+.delete-order-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* MEDIA QUERIES UNTUK RESPONSIFITAS */
+
+@media (max-width: 960px) {
+    .riwayat-pemesanan {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .riwayat-pemesanan {
+        padding: 10px;
+    }
+
+    .order-card {
+        padding: 15px;
+    }
+
+    .delete-order-btn {
+        position: relative; 
+        top: auto;
+        right: auto;
+        display: block;
+        width: 100%;
+        margin-top: 15px;
+        order: 1; /* Pindahkan tombol ke bawah di dalam flex */
+    }
+    
+    .order-card h2 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    .order-card p {
+        font-size: 0.9em;
+    }
+
+    .order-detail-table {
+        /* Memungkinkan tabel di-scroll secara horizontal di layar sempit */
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    .order-detail-table thead,
+    .order-detail-table tbody,
+    .order-detail-table tr,
+    .order-detail-table th,
+    .order-detail-table td {
+        white-space: nowrap;
+    }
+    
+    .order-card {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Memastikan detail pesanan berada di atas tombol hapus */
+    .order-detail-table {
+        order: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .riwayat-pemesanan h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    
+    .order-card {
+        border-left: 3px solid var(--primary-color);
+    }
+
+    .order-card h3 {
+        font-size: 1em;
+    }
+
+    .delete-order-btn {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}

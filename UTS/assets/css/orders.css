@@ -1,0 +1,297 @@
+#orders {
+    height: 100vh;
+    width: 400px;
+    display: flex;
+    flex-direction: column; 
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header-order {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1; 
+    padding: 30px 20px;
+}
+
+.header-order h1,
+.radio-button-group,
+.header-order .divider:first-of-type {
+    flex-shrink: 0; 
+}
+
+.cart {
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.footer-order {
+    flex-shrink: 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.header-order h1 {
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+}
+
+.radio-button-group input[type="radio"] {
+    position: absolute; 
+    opacity: 0; 
+    width: 0;
+    height: 0;
+}
+
+.radio-button-group label {
+    display: inline-block; 
+    padding: 10px 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px 5px 20px 0;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.radio-button-group input[type="radio"]:checked + label {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-list{
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cart-list .cart-img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.cart-list h1 {
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cart-list .cart-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.handler-qty {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.handler-qty button {
+    width: 30px;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 0;
+}
+
+.handler-qty button:first-child {
+    border-right: 1px solid var(--border-color);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.handler-qty button:last-child {
+    border-left: 1px solid var(--border-color);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.handler-qty .qty-display {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.metode-pembayaran h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 10px 0 0;
+}
+
+.metode-pembayaran {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.metode-pembayaran h1 {
+    margin-right: auto;
+}
+
+.metode-pembayaran input[type="radio"] {
+    position: absolute; 
+    opacity: 0; 
+    width: 0;
+    height: 0;
+}
+
+.metode-pembayaran label {
+    padding: 5px 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.metode-pembayaran input[type="radio"]:checked + label  {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.total-bayar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.total-bayar h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.confirm-button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;   
+}
+
+/* ---------------------------------------------------------------------- */
+/* MEDIA QUERIES (Untuk Layar Mobile dan Tablet Kecil) */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    
+    #orders {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
+    
+    .header-order {
+        height: auto;
+        padding: 20px;
+    }
+
+    .radio-button-group {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .radio-button-group label {
+        flex: 1;
+        text-align: center;
+        padding: 8px 10px;
+        margin: 10px 5px 10px 0;
+        font-size: 16px;
+    }
+    
+    .cart {
+        height: auto;
+    }
+
+    .metode-pembayaran {
+        gap: 20px;
+    }
+    .metode-pembayaran h1 {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    .metode-pembayaran input[type="radio"] + label {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .cart-list {
+        padding: 8px;
+        margin: 5px 0;
+    }
+    
+    .cart-list .cart-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .footer-order h1, .total-bayar h3 {
+        font-size: 12px;
+    }
+
+    .handler-qty {
+        width: 80px;
+        height: 25px;
+    }
+    .handler-qty button {
+        width: 25px;
+        font-size: 16px;
+    }
+}
